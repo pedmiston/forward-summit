@@ -1,5 +1,11 @@
 ---
 title: Introducing dynamic documents
+author: |
+  Pierce Edmiston  
+  Madpy and MadR  
+  <pierce.edmiston@gmail.com>  
+  github.com/pedmiston  
+  twitter.com/pedmistor
 ---
 
 # Three parables for dynamic documents
@@ -13,10 +19,9 @@ title: Introducing dynamic documents
 1. Reproducible
 2. Agnostic* about style
 
-# Dynamic documents outside of data analysis
+# Markdown documents can be dynamic
 
-**A markdown document can be dynamic.**  
-Contents of "game-of-thrones-fan-fic.md":
+Contents of `game-of-thrones-fan-fic.md`:
 
 ```
     # Chapter 1
@@ -29,8 +34,8 @@ Contents of "game-of-thrones-fan-fic.md":
 ```
 
 ```bash
-npm install -g md-fileserver
-mdopen game-of-thrones-fan-fic.md
+$ npm install -g md-fileserver
+$ mdopen game-of-thrones-fan-fic.md
 ```
 
 # Dynamic docs are written in markup languages
@@ -42,7 +47,7 @@ mdopen game-of-thrones-fan-fic.md
 - YAML
 - TOML
 
-<aside class="notes">
+<!--
 John Gruber or as he's known online "daring fireball" defined the
 authoritative version of Markdown, and it's the inspiration for
 many of the variants, but they all differ in some way.
@@ -69,15 +74,16 @@ data that is read in by different languages.
 This true for TOML too. TOML stands for Tom's Minimal, Obvious Language,
 and it's technically a markup language though it's used mostly like YAML
 for storing program data. (I just think the name is funny.)
-</aside>
+-->
 
 # pandoc
 
-> Wouldn't it be great to have a universal document converter?
+> Wouldn't it be great to have a universal document converter?  
+-- John MacFarlane, Professor of Philosophy, UC-Berkeley
 
-# pandoc ♡'s Makefile
+# pandoc loves Makefile
 
 ```Makefile
-introducing-dynamic-documents.pdf: introducing-dynamic-documents.md
+slides.pdf: intro.md
   pandoc -t beamer -V theme=metropolis -o $@ $<
 ```
