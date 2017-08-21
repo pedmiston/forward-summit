@@ -1,11 +1,8 @@
 ---
 title: Introducing dynamic documents
 author: |
-  Pierce Edmiston  
+  Pierce Edmiston
   Madpy and MadR  
-  <pierce.edmiston@gmail.com>  
-  github.com/pedmiston  
-  twitter.com/pedmistor
 ---
 
 # Overview
@@ -18,9 +15,51 @@ Dynamic documents for reproducible research
 
 # Three parables for dynamic documents
 
-1. The old dataset
-2. The big project
-3. The future experiment
+1. The last dataset.
+2. The only hypothesis.
+3. The future experiment.
+
+# The last dataset
+
+<!-- The parable of the last dataset is something that happens any time you
+think a dataset is final, but you end up getting more or different data in
+place of it.
+
+Here's the story: you get a dataset, thinking that all you have to do is
+analyze this particular dataset, so you start exploring and making some plots,
+fitting some models, and you write this nice long email to your collaborators
+where you summarize your findings and attach plots and stats to support your
+key points.
+
+Then you get the dreaded email.
+
+"That wasn't the right data. Use this data instead." Sometimes it isn't an
+issue, and you can redo your analysis on the new data no problem. Undoubtedly
+you **can** do the same analysis on new data. The question is how pissed off
+you're going to be for having to do the same thing twice: remaking the plots,
+updating all the numbers you included the first time.
+
+So now imagine an alternative reality where you had instead sent a dynamic
+document to your collaborators. Since you wrote your analysis in a dynamic
+document, the only change you need to make is to insert the new data, and
+recompile. **No matter how hard it was to write the first time, doing it the
+second time takes no time.**
+
+But here's the really radical point that is a little utopian, but I still
+believe it's possible. Because you sent your collaborators dynamic document,
+instead of asking you to plug in the new data, they can actually do it
+themselves. **Writing dynamic documents makes it easier for collaborators to interact with your code.** -->
+
+# The only hypothesis
+
+<!-- The parable of the only hypothesis is what happens when you analyze
+some data with a single hypothesis in mind, but then you tell people
+about the data, and they inevitably ask you about something you didn't
+test,
+
+I'll analyze some data
+and get an insight that makes me want to collect more datak
+-->
 
 # Defining qualities of dynamic documents
 
