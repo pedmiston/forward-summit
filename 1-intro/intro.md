@@ -3,26 +3,27 @@ title: Introducing dynamic documents
 author: |
   Pierce Edmiston
   Madpy and MadR  
+  github.com/pedmiston/forward-summit
 ---
 
 # Overview
 
 Dynamic documents for reproducible research
 
-Pierce: Introducing dynamic documents  
-Tristan: RMarkdown documents  
-Scott: Jupyter notebooks  
+**Pierce**: Introducing dynamic documents  
+**Tristan**: RMarkdown documents  
+**Scott**: Jupyter notebooks  
 
 # Three parables for dynamic documents
 
-1. The last dataset
+1. The final dataset
 2. The only hypothesis
 3. The predicted results
 
-# The parable of the last dataset
+# The parable of the final dataset
 
 The dreaded email:  
-> That wasn't the right data. Use this data instead.
+> That wasn't the final data. Use this data instead.
 
 <!--
 The parable of the last dataset is something that happens any time you
@@ -86,8 +87,8 @@ later, but if they hold I have that same plot that I can clean up later.
 
 # The parable of the predicted results
 
-Do you believe it when you read:  
 > The results were as predicted.
+_How do we know?_
 
 <!--
 The parable of the future experiment is a more positive use case for
@@ -122,6 +123,24 @@ reporting.
 1. Reproducible
 2. Agnostic* about style
 
+<!--
+The two qualities that I think are most descriptive of dynamic documents
+are that they are reproducible, and that they are agnostic about style.
+
+Reproducibility is a pretty big concept, and it's not all or none, but
+a good litmus test for reproducibility is to ask yourself how long would
+it take me to do this on someone else's computer?
+
+The second quality is that dynamic documents are at least in theory
+agnostic about style. You can write the same dynamic document to
+multiple outputs, whether you want to share the work as an html document,
+as a LaTeX pdf, or even as a Word doc.
+
+In practice, you will have to tweak things to get them to show up just
+how you like them in each format, but the bulk of the document should
+not be written in a way that's specific to just one format.
+-->
+
 # Markdown documents can be dynamic
 
 Contents of `game-of-thrones-fan-fic.md`:
@@ -141,6 +160,12 @@ $ npm install -g md-fileserver
 $ mdopen game-of-thrones-fan-fic.md
 ```
 
+<!--
+In a way, a Markdown document is a simple dynamic document, because it
+reproducibly compiles to html, and because you can style it with css,
+it remains agnostic about style.
+-->
+
 # Dynamic docs are written in markup languages
 
 Examples of markup languages:
@@ -149,8 +174,54 @@ Examples of markup languages:
 - Github flavored Markdown
 - ReStructured Text
 - HTML
-- YAML
-- TOML
+- YAML?
+- TOML?
+- JSON?
+
+
+<!--
+John Gruber's original Markdown specification is but one of the
+growing number of markup languages, which is really a generic
+description of ways to writing in plaintext that can be used
+in a contractual way.
+
+There are different variants of Markdown, one of which is
+Github flavored, and there are others, and they each have slightly
+different features, but overall they are pretty similar.
+
+Another markup language is ReStructured Text, which is favored
+in the Python community. It's actually the language that Python
+core developers use to write the python docs.
+
+sphinx is a python program for writing docs by turning docstrings
+into rst content.
+
+But markup languages are really broad. So Markdown is a markup
+language for converting to HTML, which itself is a markup language.
+HyperTextMarkupLanguage.
+
+There are other Markup languages you may have run into that don't
+have a use case for creating dynamic documents. YAML, for instance,
+originally stood for "Yet Another Markup Language" but it was renamed
+to the recursive "YAML Ain't Markup Language" to try to distance itself
+from things like Markdown.
+
+The way I've used YAML is to write data in config files that can
+be used in a cross-language way, so the same YAML file can be read
+in in python and in R and in go.
+
+TOML is another one with a funny name, TOML stands for Tom's Obvious,
+Minimal Language, and again, although it may technically be used
+as a markup language, it's not used the same way a typical markdown
+document is.
+
+Then we get to JSON. I have JSON up here not because I like writing
+JSON (in fact I hate writing JSON) but you can write it, and even
+though it's based around JavaScript, it is used in other languages as
+well. JSON is actually the language used by Jupyter notebooks,
+although you don't edit the JSON file directly, instead you write
+it via the browser, which Scott will soon show you.
+-->
 
 # pandoc
 
@@ -164,8 +235,14 @@ Examples of markup languages:
 # pandoc loves make
 
 ```Makefile
-slides.pdf: intro.md img/pandoc-formats.png
+# Create slides.pdf from intro.md
+slides.pdf: intro.md
   pandoc -t beamer -V theme=metropolis -o $@ $<
+
+# intro.md depends on pandoc-formats.png
+intro.md: img/pandoc-formats.png
+
+# Create pandoc-formats.png from pandoc-formats.R
 img/pandoc-formats.png: pandoc-formats.R
   ./pandoc-formats.R
 ```
