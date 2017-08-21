@@ -24,7 +24,7 @@ Scott: Jupyter notebooks
 The dreaded email:  
 > That wasn't the right data. Use this data instead.
 
-<!--
+---
 The parable of the last dataset is something that happens any time you
 think a dataset is final, but you end up getting more or different data in
 place of it later on, and have to redo the same analyses again.
@@ -53,14 +53,14 @@ I still believe it's possible. Because you sent your collaborators dynamic
 document, instead of asking you to plug in the new data, they can actually do
 it themselves. **Writing dynamic documents makes it easier for collaborators to
 interact with your code.**
--->
+
 
 # The parable of the only hypothesis
 
 A question from the audience:  
 > What happens if you include X / exclude Y?  
 
-<!--
+---
 The parable of the only hypothesis is what happens when you analyze some
 data with a single hypothesis in mind, but then you tell people about the data,
 and they inevitably ask you about something you didn't test.
@@ -82,14 +82,14 @@ The empowering aspect of dynamic documents is that I don't fear sending out
 preliminary results and exploratory data analysis. I can make a quick and dirty
 plot, draw some conclusion from it, acknowledging that things might change
 later, but if they hold I have that same plot that I can clean up later.
--->
+
 
 # The parable of the predicted results
 
 Do you believe it when you read:  
 > The results were as predicted.
 
-<!--
+---
 The parable of the future experiment is a more positive use case for
 dynamic documents. The other two parables are about how dynamic documents can
 save you time when the data and your hypotheses about the data are changing.
@@ -115,7 +115,7 @@ to scientific reporting is one of the reasons TJ, Scott, and I all care
 about dynamic documents. We are all PhD students at UW-Madison, and
 we believe that dynamic documents are the future standard for scientific
 reporting.
--->
+
 
 # Defining qualities of dynamic documents
 

@@ -1,3 +1,7 @@
 *.pdf
 
+.RData
+.Rhistory
+
 .DS_Store
+*.swp
