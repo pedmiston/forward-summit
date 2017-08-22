@@ -16,6 +16,8 @@ Mahr will be talking about Rmarkdown documents, and Scott Sievert will be
 talking about Jupyter notebooks. But before we get to the cool stuff, I wanted
 to start by introducing dynamic documents for people who may not be familiar
 with them and why I think they're worth using.
+
+So what are dynamic documents?
 -->
 
 Reproducible ways of communicating data science results.
@@ -102,7 +104,7 @@ just like I write code, and go back and forth very easily.
 
 Finally, the last reason I like dynamic documents is that I'm obsessed with
 automation, and the idea that I can reproduce entire research workflows
-by compiling a single document is just really neat.
+by compiling a single document I just find very satisfying.
 -->
 
 # Markdown documents can be simple dynamic documents
@@ -139,6 +141,8 @@ Example markup languages:
 - CommonMark
 - **Rmarkdown**
 - **Jupyter notebooks**: python + markdown = JSON??
+- YAML
+- TOML
 
 <!--
 Markdown is a markup language. In general, dynamic documents are written in
@@ -150,7 +154,7 @@ flavors of Markdown that have been invented. GitHub has it's own flavor of
 Markdown and there are efforts to replace the original Markdown spec with
 CommonMark. And there are extensions as well, so there's a version called
 Rmarkdown which TJ will show you that allows you to write Markdown documents
-with embedded code chunks.
+with embedded R code chunks.
 
 There is an effort to create a "pymarkdown" which would be like Rmarkdown but for python, but I've played around with it, and it's not nearly as good as
 Rmarkdown.
@@ -186,6 +190,8 @@ idea of a philosopher at Berkeley named John MacFarlane.
 
 # A simple dynamic document with pandoc
 
+Contents of `Makefile`:
+
 ```Makefile
 # Create slides.pdf
 slides.pdf: intro.md img/pandoc-formats.png
@@ -194,6 +200,10 @@ slides.pdf: intro.md img/pandoc-formats.png
 # Create pandoc-formats.png
 img/pandoc-formats.png: pandoc-formats.R
   ./pandoc-formats.R
+```
+
+```bash
+$ make slides.pdf
 ```
 
 # Now on to the fun stuff!
