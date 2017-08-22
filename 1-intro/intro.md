@@ -67,13 +67,13 @@ at all to run the analysis on the new data. Dynamic documents are the last step
 in the chain of making every aspect of a data science workflow automated and
 reproducible.
 
-But there's another way dynamic documents might be the answer to this parable. 
-If you send your collaborators dynamic documents that they can easily reproduce 
+But there's another way dynamic documents might be the answer to this parable.
+If you send your collaborators dynamic documents that they can easily reproduce
 on their own computers, then they can run the document with the new data, so you
 don't even have to.
 
-(I realize this may seem a bit Utopian but given some of the interactivity 
-that's available through Rmarkdown documents and jupyter notebooks, it's not 
+(I realize this may seem a bit Utopian but given some of the interactivity
+that's available through Rmarkdown documents and jupyter notebooks, it's not
 that far off.)
 -->
 
@@ -88,7 +88,7 @@ that far off.)
 There are other reasons for using dynamic documents other than them saving
 you time.
 
-One of the reasons TJ, Scott, and I all use dynamic documents is because we 
+One of the reasons TJ, Scott, and I all use dynamic documents is because we
 believe they are in line with the true spirit of science: they encourage being
 open and transparent with every decision you make with your data.
 
@@ -167,7 +167,7 @@ stores all of that in JSON, which I've always found kind of annoying.
 -- John MacFarlane, Professor of Philosophy, UC-Berkeley
 
 ```bash
-pandoc --from markdown --to docx game-of-thrones-fan-fic.md
+pandoc -f markdown -t docx game-of-thrones-fan-fic.md
 ```
 
 <!--
@@ -187,11 +187,11 @@ idea of a philosopher at Berkeley named John MacFarlane.
 # A simple dynamic document with pandoc
 
 ```Makefile
-# Create slides.pdf from intro.md and img/pandoc-formats.png
+# Create slides.pdf
 slides.pdf: intro.md img/pandoc-formats.png
   pandoc -t beamer -V theme=metropolis -o $@ $<
 
-# Create pandoc-formats.png by running pandoc-formats.R
+# Create pandoc-formats.png
 img/pandoc-formats.png: pandoc-formats.R
   ./pandoc-formats.R
 ```
