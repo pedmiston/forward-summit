@@ -1,28 +1,65 @@
 ---
-title: Introducing dynamic documents
+title: Dynamic documents for reproducible research
 author: |
-  Pierce Edmiston
-  Madpy and MadR  
-  github.com/pedmiston/forward-summit
+  **Pierce**: Introducing dynamic documents  
+  **Tristan**: RMarkdown documents  
+  **Scott**: Jupyter notebooks  
 ---
 
-# Overview
+<!--
+Thanks for coming everyone. I'm happy to kick off our session on using dynamic
+documents for reproducible research. My name is Pierce Edmiston, and I'm
+presenting with two other members of the Madpy and MadR communities. Tristan
+Mahr will be talking about RMarkdown documents, and Scott Sievert will be
+talking about Jupyter notebooks. But before we get to the cool stuff, I wanted
+to start by introducing dynamic documents for people who may not be familiar
+with them and why we think they're worth learning about.
+-->
 
-Dynamic documents for reproducible research
+# The data science workflow
 
-**Pierce**: Introducing dynamic documents  
-**Tristan**: RMarkdown documents  
-**Scott**: Jupyter notebooks  
+![](img/data-science-workflow.png)
+
+<!--
+Dynamic documents are a tool for communicating data science results. Here is a
+typical data scientist's workflow: you start by importing some data, you spend
+most of your time getting it cleaned up, then you try to understand that data
+through visualizations and statistics, and once you've figured out what's in the
+data, you're ready to communicate that understanding to someone else.
+
+Typically this communication happens through some sort of document. You might
+send an email describing what you've found. Or it could a more
+formal, like a Word doc or pdf report that you put together and you send out.
+
+Usually this involves a lot of copy and pasting. You're running R code or python
+code and you have to copy the output of those scripts and paste it into whatever
+document you're working on. The same for figures: you make a figure, then you
+manually move it into the document. I would call this a static document.
+
+In contrast, if you were writing a dynamic document, you would have automated
+ways of capturing the output of your analysis scripts and inserting it into the
+document. This includes figures: so rather than referencing a single image file,
+you would reference the code that was used to create that image.
+-->
 
 # Three parables for dynamic documents
 
-1. The final dataset
-2. The only hypothesis
-3. The predicted results
+1. The final dataset.
+2. The only hypothesis.
+3. The predicted results.
+
+<!--
+So what are the advantages of using dynamic documents? I'm going to talk about
+three parables for dynamic documents.
+
+These are three situations you might find yourself in that illustrate why
+dynamic documents are worth using.
+-->
 
 # The parable of the final dataset
 
-The dreaded email:  
+The dreaded email:
+
 > That wasn't the final data. Use this data instead.
 
 <!--
@@ -33,16 +70,15 @@ place of it later on, and have to redo the same analyses again.
 Here's the story: you get a dataset, thinking that all you have to do is
 analyze this particular dataset, so you start exploring and making some plots,
 fitting some models, and you write this nice long email to your collaborators
-where you summarize your findings and attach plots and stats to support your
-key points.
+where you summarize your findings, and you attach some plots and stats to support your key points.
 
-Then you get the dreaded email.
+Then you get the dreaded email: "That wasn't the right data. Use this data instead."
 
-"That wasn't the right data. Use this data instead." Sometimes it isn't an
-issue, and you can redo your analysis on the new data no problem. Undoubtedly
-you **can** do the same analysis on new data. The question is how pissed off
-you're going to be for having to do the same thing twice: remaking the plots,
-and copying and pasting all those numbers you included the first time.
+Sometimes it isn't an issue, and you can redo your analysis on the new data no
+problem. Undoubtedly you **can** do the same analysis on new data. The question
+is how mad you're going to be for having to do the same thing twice:
+remaking the plots, and copying and pasting all those numbers you included the
+first time.
 
 So now imagine an alternative reality where you had instead sent a dynamic
 document to your collaborators. Since you wrote your analysis in a dynamic
@@ -50,15 +86,16 @@ document, the only change you need to make is to reference the new data, and
 recompile, and all of the plots and stats are updated automatically.
 
 But here's the really radical point. I admit this is a little utopian, but
-I still believe it's possible. Because you sent your collaborators dynamic
-document, instead of asking you to plug in the new data, they can actually do
+I still believe it's possible. When you send your collaborators dynamic
+documents, instead of asking you to plug in the new data, they can actually do
 it themselves. **Writing dynamic documents makes it easier for collaborators to
-interact with your code.**
+interact with your analysis.**
 -->
 
 # The parable of the only hypothesis
 
-A question from the audience:  
+The inevitable question:
+
 > What happens if you include X / exclude Y?  
 
 <!--
@@ -75,20 +112,20 @@ of your data is invalid for some reason, and now you need to redo all those
 plots with the data removed.
 
 Writing dynamic documents is an effective way of turning an analysis into
-a pipeline from raw data to published findings, with all the decisions you made
+a pipeline from raw data to final results, with all the decisions you made
 along the way documented in code, so that you can very easily change things at
 any stage based on what you have learned about the data.
 
 The empowering aspect of dynamic documents is that I don't fear sending out
 preliminary results and exploratory data analysis. I can make a quick and dirty
 plot, draw some conclusion from it, acknowledging that things might change
-later, but if they hold I have that same plot that I can clean up later.
+later, and it's easy for me to add in more complexity or account for more
+variance in the data later on.
 -->
 
 # The parable of the predicted results
 
-> The results were as predicted.
-_How do we know?_
+> The results were just as predicted.
 
 <!--
 The parable of the future experiment is a more positive use case for

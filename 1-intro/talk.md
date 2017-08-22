@@ -1,7 +1,7 @@
 ---
 title: Introducing dynamic documents
 author: |
-  Pierce Edmiston
+  Pierce Edmiston  
   Madpy and MadR  
   github.com/pedmiston/forward-summit
 ---
@@ -25,7 +25,7 @@ Dynamic documents for reproducible research
 The dreaded email:  
 > That wasn't the final data. Use this data instead.
 
----
+* * *
 The parable of the last dataset is something that happens any time you
 think a dataset is final, but you end up getting more or different data in
 place of it later on, and have to redo the same analyses again.
@@ -61,7 +61,7 @@ interact with your code.**
 A question from the audience:  
 > What happens if you include X / exclude Y?  
 
----
+* * *
 The parable of the only hypothesis is what happens when you analyze some
 data with a single hypothesis in mind, but then you tell people about the data,
 and they inevitably ask you about something you didn't test.
@@ -90,7 +90,7 @@ later, but if they hold I have that same plot that I can clean up later.
 > The results were as predicted.
 _How do we know?_
 
----
+* * *
 The parable of the future experiment is a more positive use case for
 dynamic documents. The other two parables are about how dynamic documents can
 save you time when the data and your hypotheses about the data are changing.
@@ -123,7 +123,7 @@ reporting.
 1. Reproducible
 2. Agnostic* about style
 
----
+* * *
 The two qualities that I think are most descriptive of dynamic documents
 are that they are reproducible, and that they are agnostic about style.
 
@@ -160,7 +160,7 @@ $ npm install -g md-fileserver
 $ mdopen game-of-thrones-fan-fic.md
 ```
 
----
+* * *
 In a way, a Markdown document is a simple dynamic document, because it
 reproducibly compiles to html, and because you can style it with css,
 it remains agnostic about style.
@@ -179,7 +179,7 @@ Examples of markup languages:
 - JSON?
 
 
----
+* * *
 John Gruber's original Markdown specification is but one of the
 growing number of markup languages, which is really a generic
 description of ways to writing in plaintext that can be used
