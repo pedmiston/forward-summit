@@ -143,11 +143,8 @@ I've always found kind of annoying.
 
 ```Makefile
 # Create slides.pdf from intro.md
-slides.pdf: intro.md
+slides.pdf: intro.md img/pandoc-formats.png
   pandoc -t beamer -V theme=metropolis -o $@ $<
-
-# intro.md depends on pandoc-formats.png
-intro.md: img/pandoc-formats.png
 
 # Create pandoc-formats.png by running pandoc-formats.R
 img/pandoc-formats.png: pandoc-formats.R

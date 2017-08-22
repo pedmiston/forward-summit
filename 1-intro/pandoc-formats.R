@@ -8,6 +8,10 @@ library(ggraph)
 input_formats <- system("pandoc --list-input-formats", intern = TRUE)
 output_formats <- system("pandoc --list-output-formats", intern = TRUE)
 
+shorten_md <- . %>% stringr::str_replace("markdown", "md")
+input_formats <- shorten_md(input_formats)
+output_formats <- shorten_md(output_formats)
+
 nodes <- data_frame(
     # Start with nodes for all input and output formats
     format = c(input_formats, output_formats),
@@ -41,9 +45,10 @@ edges <- expand.grid(
 graph <- igraph::graph_from_data_frame(edges, vertices = nodes)
 ggraph(graph, layout = "bipartite") +
   geom_edge_diagonal(edge_width = 0.1) +
-  geom_node_text(aes(label = format, hjust = 1-type), angle = 90) +
+  geom_node_text(aes(label = format, hjust = 1-type),
+                 angle = 90, size = 9) +
   coord_cartesian(ylim = c(-1, 2)) +
   scale_y_reverse() +
   theme_graph()
 
-ggsave("img/pandoc-formats.png", height = 6, width = 11)
+ggsave("img/pandoc-formats.png", height = 9, width = 16)

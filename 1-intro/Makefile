@@ -1,11 +1,8 @@
 all: slides.pdf notes.pdf
 
 # Create slides.pdf from intro.md
-slides.pdf: intro.md
+slides.pdf: intro.md img/pandoc-formats.png img/data-science-workflow.png img/pandoc-scholar.png
 	pandoc -t beamer -V theme=metropolis -o $@ $<
-
-# intro.md references img/pandoc-formats.png
-intro.md: img/pandoc-formats.png img/data-science-workflow.png img/pandoc-scholar.png
 
 # Create img/pandoc-formats.png by running pandoc-formats.R
 img/pandoc-formats.png: pandoc-formats.R
