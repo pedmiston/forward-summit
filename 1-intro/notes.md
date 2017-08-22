@@ -8,7 +8,7 @@ author: |
 
 # What are dynamic documents?
 
-<!--
+* * *
 Thanks for coming everyone. I'm happy to kick off our session on using dynamic
 documents for reproducible research. My name is Pierce Edmiston, and I'm
 presenting with two other members of the Madpy and MadR communities. Tristan
@@ -16,13 +16,13 @@ Mahr will be talking about Rmarkdown documents, and Scott Sievert will be
 talking about Jupyter notebooks. But before we get to the cool stuff, I wanted
 to start by introducing dynamic documents for people who may not be familiar
 with them and why I think they're worth using.
--->
+
 
 Reproducible ways of reporting data science results.
 
 ![The data science workflow. From Hadley Wickham.](img/data-science-workflow.png)
 
-<!--
+* * *
 Dynamic documents are a programmatic tool for communicating data science results.
 
 Here is a typical data scientist's workflow: you start by importing some data,
@@ -36,7 +36,7 @@ Dynamic documents are really what connects the gap between doing some analysis a
 Most of the time we do this moving with copy & paste. We can write an email to collaborators, pasting in the numbers and plots, and send it off.
 
 But then you get the dreaded email:
--->
+
 
 # The parable of the old dataset
 
@@ -53,7 +53,7 @@ Bruce
 
 _"The dreaded email." By [Karl Broman](https://www.biostat.wisc.edu/~kbroman/presentations/repro_research_JSM2016.pdf)._
 
-<!--
+* * *
 Getting an email like this fills me with dread because it immediately says I'm going to have to waste time doing things that I've already done.
 
 Unless... you're using dynamic documents.
@@ -68,7 +68,7 @@ you don't even have to.
 (I realize this may seem a bit Utopian but given some of the interactivity
 that's available through Rmarkdown documents and jupyter notebooks, it's not
 that far off.)
--->
+
 
 # Other reasons for writing dynamic documents
 
@@ -106,7 +106,7 @@ Example markup languages:
 - **Rmarkdown**
 - **Jupyter notebooks** (`Markdown + python = JSON???`)
 
-<!--
+* * *
 Markdown is an example of a markup language designed so that you don't have to
 write HTML. In general, dynamic documents are written in markup languages, but
 there are some annoying exceptions.
@@ -124,7 +124,7 @@ Rmarkdown.
 
 Jupyter notebooks are actually something different. So you'll see when Scott talks about this, but you are basically writing either markdown or python, but under the hood, the actual notebook file stores all of that in JSON, which
 I've always found kind of annoying.
--->
+
 
 # pandoc
 
